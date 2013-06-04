@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+	<link href="css/jquery.toolbars.css" rel="stylesheet" />
+	<meta charset="utf-8"/>
+  </head>
+
+  <body>
+    <div id="users2" class="visible-phone">
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="./index.html" class="brand">Utilisateurs</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div id="users" class="hidden-phone">
+    </div>
+    <div id="messages">
+      <div class="message" id="msgtpl" style="float:right;display:none;">
+        <img src="{{{user.avatar}}}">
+        <div class="info">
+          <p><strong>{{user.username}}</strong></p>
+          <blockquote><cite>{{citation}}</cite><div style="clear:both"></div>{{message}}</blockquote>
+          <span class="date"><b>{{h}}:{{m}}</b></span>
+        </div>
+		<a onClick="citer('{{message}}')"  class="btn btn-info citation">citer</a>
+      </div>
+    </div>
+    <div id="login">
+		<br /><br />
+	  <center><h1 style="color:#2D2D2D">Connection au tchat</h1></center>
+	<form action="" class="form-inline" id="loginform" method="post">
+		<input type="text" class="input-large" name="login" id="username" placeholder="Nom d'utilisateur">
+		<input type="mail" class="input-large" name="mail" id="mail" placeholder="E-mail">
+		<button type="submit" class="btn btn-primary">Connection</button>
+    </form>
+    </div>
+	<div style="height:50px"></div>
+	<div id="citationWrapper"></div>
+    <form style="margin:0" action="" class="input-append" id="form">
+		<input style="margin-right:25px;"class="span10" id="message" type="text" placeholder="Entrez votre message ici">
+		<a class="settings-button pressed" id="normal-button"><img src="img/icon-cog-small.png"></a>
+
+		<button type="submit" style="bottom:8px" class="btn btn-primary submit" id="send" type="button">Envoyer</button>
+    </form>
+	
+<div id="user-toolbar-options" style="display:none">
+		<a href="#" onclick="addSmiley('[content]');"><img src="img/smiley.gif" alt="Smile" border="0"/></a>
+		<a href="#" onclick="addSmiley('[simpson]');"><img src="img/smiley2.gif" alt="Smile" border="0"/></a>
+		<a href="#" onclick="addSmiley('[debile]');"><img src="img/smiley3.gif" alt="Smile" border="0"/></a>
+		<a href="#" onclick="addSmiley('[coeur]');"><img src="img/smiley4.gif" alt="Smile" border="0"/></a>
+</div>
+    <script src="js/jquery.v2.0.js"></script>
+    <script src="js/mustache.js"></script>
+    <script src="http://localhost:1337/socket.io/socket.io.js"></script>
+	<script src="js/jquery.toolbar.js"></script>
+    <script src="js/client.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+	
+  </body>
+</html>
